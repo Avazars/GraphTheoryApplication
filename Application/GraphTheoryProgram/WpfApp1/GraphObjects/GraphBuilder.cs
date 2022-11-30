@@ -1,6 +1,6 @@
 ﻿namespace WpfApp1.GraphObjects;
 
-public class VertexClass
+public class GraphBuilder
 {
     
 }

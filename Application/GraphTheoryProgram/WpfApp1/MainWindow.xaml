@@ -16,27 +16,166 @@
         >
     <Grid>
         <Grid>
+            <!-- Side Navigation Panel -->
             <Grid Name="navPanelLeft" 
                   HorizontalAlignment="Left" 
                   Width="100"
-                  Background="White">
+                  >
+                <StackPanel>
+                    <!-- Move Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,40,0,0">
+                         <ToggleButton Name="MoveToolButton" 
+                                 Checked="MoveToolButton_OnChecked"
+                                 Unchecked="MoveToolButton_OnUnChecked"
+                                 Content="Move Tool"
+                                 ToolTip="Move Tool"
+                                 Margin="3,3,3,3">
+                         </ToggleButton>
+                    </Grid>
+                    
+                    <!-- Vertex Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,10,0,0">
+                         <ToggleButton Name="VertexToolButton" 
+                                       Checked="VertexToolButton_OnChecked"
+                                       Unchecked="VertexToolButton_OnUnChecked"
+                                       Content="Vertex Tool"
+                                       ToolTip="Vertex Tool"
+                                       Margin="3,3,3,3">
+                         </ToggleButton>
+                    </Grid>
+                    
+                    <!-- Edge Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,10,0,0">
+                         <ToggleButton Name="EdgeToolButton" 
+                                       Checked="EdgeToolButton_OnChecked"
+                                       Unchecked="EdgeToolButton_OnUnChecked"
+                                 Content="Edge Tool"
+                                 ToolTip="Edge Tool"
+                                       Margin="3,3,3,3">
+                             
+                         </ToggleButton>
+                    </Grid>
+                    
+                    <!-- Remove Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,10,0,0">
+                         <ToggleButton Name="RemoveToolButton" 
+                                       Checked="RemoveToolButton_OnChecked"
+                                       Unchecked="RemoveToolButton_OnUnChecked"
+                                       Content="Remove Tool"
+                                       ToolTip="Remove Tool"
+                                       Margin="3,3,3,3">
+                         </ToggleButton>
+                    </Grid>
+                    
+                    <!-- Color Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,10,0,0">
+                         <ToggleButton Name="ColorToolButton" 
+                                       Checked="ColorToolButton_OnChecked"
+                                       Unchecked="ColorToolButton_OnUnChecked"
+                                       Content="Color Tool"
+                                       ToolTip="Color Tool"
+                                       Margin="3,3,3,3">
+                         </ToggleButton>
+                    </Grid>
+                </StackPanel>
             </Grid>
+            
+            <!-- Top Navigation Panel -->
             <Grid Name="navPanelTop"
-                  HorizontalAlignment="Stretch"
+                  MouseDown="topPanelMouseDown"
+                  HorizontalAlignment="Right"
                   VerticalAlignment="Top"
                   Width="1000"
-                  Height="40"
-                  Background="White">
+                  Height="30"
+                  Background="DimGray">
+                
+                <!-- Far right close button -->
+                <Grid HorizontalAlignment="Right"
+                      VerticalAlignment="Stretch"
+                      Width="40">
+                <Button Background="Red"  Click="CloseButtonOnClick">
+                        <TextBlock Text="X" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    </Button>
+                    
+                </Grid>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"> <TextBlock Text="Graph Theory Sketchpad" FontSize="15"></TextBlock></Grid>
             </Grid>
-            <Canvas x:Name="DrawingGrid"
+            
+            <!-- Drawing Canvas where the vertexes are rendered -->
+            <Canvas Name="DrawingGrid"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Height="760"
+                    Height="770"
                     Width="900"
                     MouseLeftButtonDown="DrawingGrid_OnMouseLeftButtonDown"
                     Background="Black">
-                
             </Canvas>
+            
+            <!-- Graph Information Bottom Right Information Panel -->
+            <Grid Name="infoPanel"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Bottom"
+                  Width="100"
+                  Height="100"
+                  Background="White"
+                  Margin="0,0,0,0">
+                
+                
+                <StackPanel >
+                    
+                    <!-- Graph Information Header -->
+                    <Grid Height="25">
+                        <TextBlock
+                            Text="Graph Info"
+                            FontSize="15"
+                            TextAlignment="Center" VerticalAlignment="Center">
+                        </TextBlock>    
+                    </Grid>
+                    
+                    <!-- Graph Vertices Number -->
+                    <Grid Height="25">
+                        <TextBlock
+                            Name="NumVerticesTextBlock"
+                            Text="n = "
+                            TextAlignment="Center" VerticalAlignment="Center">
+                        </TextBlock>    
+                    </Grid>
+                    
+                    <!-- Graph Edges Number -->
+                    <Grid Height="25">
+                        <TextBlock
+                            Name="NumEdgesTextBlock"
+                            Text="m = "
+                            TextAlignment="Center" VerticalAlignment="Center">
+                        </TextBlock>    
+                    </Grid>
+                    
+                    <!-- Graph Connectivity Number -->
+                    <Grid Height="25">
+                        <TextBlock
+                            Name="NumConnectivityTextBlock"
+                            Text="k = "
+                            TextAlignment="Center" VerticalAlignment="Center">
+                        </TextBlock>    
+                    </Grid>
+
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
     

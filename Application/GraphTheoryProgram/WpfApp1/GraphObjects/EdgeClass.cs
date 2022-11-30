@@ -2,5 +2,5 @@
 
 public class EdgeClass
 {
-    
+    private bool isDirected;
 }
