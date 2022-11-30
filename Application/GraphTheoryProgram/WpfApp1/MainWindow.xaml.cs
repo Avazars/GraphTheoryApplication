@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -31,7 +32,6 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-        
         private void topPanelMouseDown(object sender, MouseEventArgs e)
         {
             this.DragMove();
@@ -59,8 +59,21 @@ namespace WpfApp1
                 Height = size,
                 RenderTransform = new TranslateTransform(-(size/2),-(size/2))
             };
-            ellip.MouseRightButtonDown += DeleteEllipse;
+            ellip.MouseLeftButtonDown += VertexClicked;
             return ellip;
+        }
+
+        private void VertexClicked(object sender, MouseButtonEventArgs e)
+        {
+            var oop = sender as Ellipse;
+            switch (currentToolSet)
+            {
+                case ToolSet.Remove:
+                    DeleteEllipse(oop);
+                    break;
+             //in here we will do a switch case and do different things depending on the tool
+             // that we are using while clicking on the vertex
+            }
         }
 
         private void AddEllipse(double x, double y)
@@ -73,10 +86,8 @@ namespace WpfApp1
         }
 
         
-        private void DeleteEllipse(object sender, MouseEventArgs e)
+        private void DeleteEllipse(Ellipse oop)
         {
-            var oop = sender as Ellipse;
-
             if (DrawingGrid.Children.Contains(oop) && oop != null)
             {
                 _ellipses.Remove(oop);
@@ -85,7 +96,19 @@ namespace WpfApp1
         }
         private void DrawingGrid_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AddEllipse(e.GetPosition(DrawingGrid).X, e.GetPosition(DrawingGrid).Y);
+            bool mouseOver = false;
+            for (int i = 0; i < DrawingGrid.Children.Count; i++)
+            {
+                if (DrawingGrid.Children[i].IsMouseOver)
+                {
+                    mouseOver = true;
+                }
+            }
+
+            if (mouseOver == false && currentToolSet == ToolSet.Vertex)
+            {
+                AddEllipse(e.GetPosition(DrawingGrid).X, e.GetPosition(DrawingGrid).Y);
+            }
         }
 
         private void CloseButtonOnClick(object sender, RoutedEventArgs e)
@@ -153,32 +176,5 @@ namespace WpfApp1
             currentToolSet = ToolSet.Remove;
             ResetButtons();
         }
-        private void MoveToolButton_OnUnChecked(object sender, RoutedEventArgs e)
-        {
-            currentToolSet = ToolSet.None;
-            ResetButtons();
-        }
-        private void VertexToolButton_OnUnChecked(object sender, RoutedEventArgs e)
-        {
-            currentToolSet = ToolSet.None;
-            ResetButtons();
-        }
-        private void EdgeToolButton_OnUnChecked(object sender, RoutedEventArgs e)
-        {
-            currentToolSet = ToolSet.None;
-            ResetButtons();
-        }
-        private void ColorToolButton_OnUnChecked(object sender, RoutedEventArgs e)
-        {
-            currentToolSet = ToolSet.None;
-            ResetButtons();
-        }
-        private void RemoveToolButton_OnUnChecked(object sender, RoutedEventArgs e)
-        {
-            currentToolSet = ToolSet.None;
-            ResetButtons();
-        }
-        
-        
     }
 }
