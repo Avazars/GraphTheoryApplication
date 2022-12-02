@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "XFOOuY+dJgk0e5EttW5FrChsa03wGPnLA7EWwWI597fYYfk8JRCtevesiGESw5iAI3XdAg2kVUC701tH4+G9UA==",
+  "dgSpecHash": "W/FZlc68GWjA4J8khPBr18FNnPOnb+whKE9UtRWsr65684pt1U90x9SVPweUAIa0VncPy1kfyw0F34Yni6sZPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jadin\\Documents\\A Git Repository space\\GraphTheoryApplication\\Application\\GraphTheoryProgram\\WpfApp1\\WpfApp1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jadin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\jadin\\.nuget\\packages\\pixieditor.colorpicker\\3.3.1\\pixieditor.colorpicker.3.3.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -8,7 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Images" />
+      <Page Update="Images\Icons.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="PixiEditor.ColorPicker" Version="3.3.1" />
     </ItemGroup>
 
 </Project>

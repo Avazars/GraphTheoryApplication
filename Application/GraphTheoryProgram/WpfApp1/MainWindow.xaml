@@ -4,16 +4,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
         Foreground="Black"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="MainWindow"
         Height="800" 
-        Width="1000" 
+        Width="1100" 
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         >
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Images/Icons.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
     <Grid>
         <Grid>
             <!-- Side Navigation Panel -->
@@ -29,7 +38,6 @@
                           Margin="0,40,0,0">
                          <ToggleButton Name="MoveToolButton" 
                                  Checked="MoveToolButton_OnChecked"
-                                 
                                  Content="Move Tool"
                                  ToolTip="Move Tool"
                                  Margin="3,3,3,3">
@@ -92,6 +100,7 @@
                                        Margin="3,3,3,3">
                          </ToggleButton>
                     </Grid>
+                    
                 </StackPanel>
             </Grid>
             
@@ -100,7 +109,7 @@
                   MouseDown="topPanelMouseDown"
                   HorizontalAlignment="Right"
                   VerticalAlignment="Top"
-                  Width="1000"
+                  Width="1100"
                   Height="30"
                   Background="DimGray">
                 
@@ -108,8 +117,10 @@
                 <Grid HorizontalAlignment="Right"
                       VerticalAlignment="Stretch"
                       Width="40">
-                <Button Background="Red"  Click="CloseButtonOnClick">
-                        <TextBlock Text="X" FontSize="20" TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                    
+                    
+                    <Button Background="Transparent" Click="CloseButtonOnClick">
+                        <Image Source="{StaticResource CloseButtonDrawingImage}"></Image>
                     </Button>
                     
                 </Grid>
@@ -129,11 +140,11 @@
             <!-- Graph Information Bottom Right Information Panel -->
             <Grid Name="infoPanel"
                   HorizontalAlignment="Left"
-                  VerticalAlignment="Bottom"
+                  VerticalAlignment="Top"
                   Width="100"
                   Height="100"
                   Background="White"
-                  Margin="0,0,0,0">
+                  Margin="100,30,0,0">
                 
                 
                 <StackPanel >
@@ -176,28 +187,15 @@
 
                 </StackPanel>
             </Grid>
+            
+            <colorpicker:StandardColorPicker
+                Name="colPic"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+            >
+                        
+            </colorpicker:StandardColorPicker>
+            
         </Grid>
     </Grid>
-    
-    <!--<Canvas>
-
-        <Canvas Background="Black" x:Name="DrawingGrid" MouseLeftButtonDown="DrawingGrid_OnMouseLeftButtonDown" Height="800" Width="850" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="150"/>
-        
-            
-        <ToolBarPanel Height="800" Background="Aqua">
-            
-        </ToolBarPanel>
-
-
-        <ToolBar Background="Black" Width="1000" HorizontalAlignment="Center" VerticalAlignment="Top" Panel.ZIndex="1" Canvas.Top="-75">
-            <ToggleButton x:Name="MoveButton" Content="Move" Height="30" Width="50" Foreground="White"/>
-            <ToggleButton x:Name="VertexButton" Content="Vertex" Height="30" VerticalAlignment="Top" Width="50" Foreground="White"/>
-            <ToggleButton x:Name="EdgeButton" Content="Edge" Height="30" VerticalAlignment="Top" Width="50" Foreground="White"/>
-            <ToggleButton Content="ToggleButton" Height="30" VerticalAlignment="Top" Width="50" Foreground="White"/>
-            <ToggleButton Content="ToggleButton" Height="30" VerticalAlignment="Top" Width="50" Foreground="White"/>
-        </ToolBar>
-        <DockPanel Height="784" LastChildFill="False" Width="150">
-            
-        </DockPanel>
-    </Canvas>-->
 </Window>

@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="CloseButtonDrawingImage">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V2000 H2000 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="1.8930000066757202" Y="0" />
+                </DrawingGroup.Transform>
+                <DrawingGroup Opacity="1">
+                    <DrawingGroup Opacity="1" Transform="1,0,0,1,33.8875,4.29666">
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF080605" Thickness="195.83" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <EllipseGeometry RadiusX="885.55" RadiusY="885.55" Center="966.113,995.703" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                    <DrawingGroup Opacity="1" Transform="0.549659,0,0,0.549659,449.915,450.767">
+                        <GeometryDrawing Geometry="F0 M2000,2000z M0,0z M0,0L1999.39,1999.39">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF080605" Thickness="356.28" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                    <DrawingGroup Opacity="1" Transform="0.549659,0,0,0.549659,449.915,450.767">
+                        <GeometryDrawing Geometry="F0 M2000,2000z M0,0z M2000,0L-1.893,2001.89">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF080605" Thickness="356.28" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

@@ -7,10 +7,10 @@
             <circle cx="966.113" cy="995.703" r="885.55" style="fill:none;stroke:rgb(8,6,5);stroke-width:195.83px;"/>
         </g>
         <g transform="matrix(0.549659,0,0,0.549659,449.915,450.767)">
-            <path d="M0,0L1999.39,1999.39" style="fill:none;stroke:rgb(8,6,5);stroke-width:356.28px;"/>
+            <path d="M0,0L1999.39,1999.39" style="rgb(8,6,5):none;stroke:rgb(8,6,5);stroke-width:356.28px;"/>
         </g>
         <g transform="matrix(0.549659,0,0,0.549659,449.915,450.767)">
-            <path d="M2000,0L-1.893,2001.89" style="fill:none;stroke:rgb(8,6,5);stroke-width:356.28px;"/>
+            <path d="M2000,0L-1.893,2001.89" style="fill:rgb(8,6,5);stroke:rgb(8,6,5);stroke-width:356.28px;"/>
         </g>
     </g>
 </svg>
