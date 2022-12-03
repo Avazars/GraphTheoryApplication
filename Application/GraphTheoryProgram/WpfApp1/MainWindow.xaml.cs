@@ -115,8 +115,14 @@ namespace WpfApp1
                             PathFigure pf = new PathFigure()
                             {
                                 StartPoint = new Point(posX1, posY1),
-                                Segments = new PathSegmentCollection(){new ArcSegment()
-                                {Size = new Size(100,100), Point = new Point(posX2,posY2)}}
+                                Segments = new PathSegmentCollection()
+                                {
+                                    new ArcSegment()
+                                    {
+                                        Size = new Size(50,50), 
+                                        Point = new Point(posX2,posY2),
+                                    }
+                                }
                             };
                             PathGeometry pg = new PathGeometry
                             {
