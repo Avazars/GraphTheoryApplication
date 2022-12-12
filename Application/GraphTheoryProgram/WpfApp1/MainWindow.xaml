@@ -101,12 +101,26 @@
                          </ToggleButton>
                     </Grid>
                     
+                    <!-- Color Tool Button-->
+                    <Grid HorizontalAlignment="Stretch" 
+                          VerticalAlignment="Top" 
+                          Height="60" 
+                          Margin="0,10,0,0">
+                        <ToggleButton Name="InfoToolButton" 
+                                      Checked="InfoToolButton_OnChecked"
+                                       
+                                      Content="Info Tool"
+                                      ToolTip="Info Tool"
+                                      Margin="3,3,3,3">
+                        </ToggleButton>
+                    </Grid>
+                    
                 </StackPanel>
             </Grid>
             
             <!-- Top Navigation Panel -->
             <Grid Name="navPanelTop"
-                  MouseDown="topPanelMouseDown"
+                  MouseDown="TopPanelMouseDown"
                   HorizontalAlignment="Right"
                   VerticalAlignment="Top"
                   Width="1100"
@@ -195,7 +209,6 @@
             >
                         
             </colorpicker:StandardColorPicker>
-            
         </Grid>
     </Grid>
 </Window>
