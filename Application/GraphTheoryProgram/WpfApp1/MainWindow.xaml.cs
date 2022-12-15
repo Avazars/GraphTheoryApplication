@@ -89,7 +89,7 @@ namespace WpfApp1
                     else
                     {
                         AddEdge(ClickedVertex);
-                        SelectedVertex.Stroke = new SolidColorBrush(Colors.Black);
+                        SelectedVertex.Stroke = new SolidColorBrush(Colors.White);
                         SelectedVertex = null;
                     }
                     break;

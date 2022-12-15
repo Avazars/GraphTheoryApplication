@@ -108,7 +108,7 @@
                           Margin="0,10,0,0">
                         <ToggleButton Name="InfoToolButton" 
                                       Checked="InfoToolButton_OnChecked"
-                                       
+                                       Visibility="Hidden"
                                       Content="Info Tool"
                                       ToolTip="Info Tool"
                                       Margin="3,3,3,3">
